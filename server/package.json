@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "express server for mealplanner",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Sander Koopmans",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
