@@ -8,3 +8,8 @@
   flex-wrap: wrap;
   align-content: center;
 }
+
+.selection {
+  display: flex;
+  flex-wrap: wrap;
+}

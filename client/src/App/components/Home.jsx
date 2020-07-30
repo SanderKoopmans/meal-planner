@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchForm from './SearchForm';
 import Card from './Card';
+import './Home.css';
 
 let recipeSelection = [];
 let recipes = '';
@@ -37,7 +38,7 @@ class SearchResults extends Component {
     const { list } = this.state;
     // console.log('THIS LOG', this.state.list);
     const recipe = list.map(item => item.recipe);
-    console.log('ANOTHER LOG', recipe);
+    // console.log('ANOTHER LOG', recipe);
 
     return (
       <div className="searchContainer">
@@ -95,9 +96,7 @@ class Home extends Component {
 
         <button onClick={() => this.hideComponent("showSearchResult")}>Hide/Show results</button>
 
-        <div className="searchContainer">
           {showSearchResult && <SearchResults />}
-        </div>
           <h3>Your selection:</h3>
           {recipes.length ? (
             <div className="selection">
