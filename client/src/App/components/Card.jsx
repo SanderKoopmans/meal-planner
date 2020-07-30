@@ -1,7 +1,6 @@
 import React from 'react';
 import './Card.css';
 import PropTypes from 'prop-types';
-// import store from 'store2';
 
 let myRecipes = [];
 
@@ -19,16 +18,14 @@ const saveToArray = (data) => {
 };
 
 const Card = props => {
-  const { label, image, amount, ingredients, desc } = props;
+  const { label, image, desc } = props;
   // console.log('props ', props);
   return (
     <div className="Card">
       <h3>{label}</h3>
       <img src={image} alt={label}></img>
-      <p>Yield: {amount}</p>
-      <p>Ingredients: {ingredients}</p>
       <button href={desc}>Get full recipe</button>
-      <button onClick={(data) => saveToArray({'label': label, 'image': image, 'ingredients': ingredients, 'url': desc })}>Add to mylist</button>
+      <button onClick={(data) => saveToArray({'label': label, 'image': image, 'url': desc })}>Add to selection</button>
     </div>
   );
 };
