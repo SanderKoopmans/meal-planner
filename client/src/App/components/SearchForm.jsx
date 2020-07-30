@@ -39,10 +39,10 @@ class SearchFrom extends Component {
       </label>
       <input type="submit" value="Submit" />
       <Link to={'./list'}>
-            <button>
-              Show results
-            </button>
-          </Link>
+        <button>
+          Show results
+        </button>
+      </Link>
       </div>
     )
   }

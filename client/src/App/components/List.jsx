@@ -28,7 +28,7 @@ class List extends Component {
     console.log('ANOTHER LOG', recipe);
 
     return (
-      <div className="App">
+      <div className="searchResult">
         <h2>Your search results:</h2>
         {recipe.length ? (
           <div className="list">
