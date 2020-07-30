@@ -23,9 +23,9 @@ class SearchResults extends Component {
 
   render() {
     const { list } = this.state;
-    console.log('THIS LOG', this.state.list);
+    // console.log('THIS LOG', this.state.list);
     const recipe = list.map(item => item.recipe);
-    console.log('ANOTHER LOG', recipe);
+    // console.log('ANOTHER LOG', recipe);
 
     return (
       <div className="searchResult">
