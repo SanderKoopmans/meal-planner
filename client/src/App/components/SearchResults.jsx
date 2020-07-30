@@ -6,7 +6,7 @@ class SearchResults extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: []
+      list: [],
     }
   }
 
@@ -28,7 +28,7 @@ class SearchResults extends Component {
     // console.log('ANOTHER LOG', recipe);
 
     return (
-      <div className="searchResult">
+      <div className="searchContainer">
         <h2>Your search results:</h2>
         {recipe.length ? (
           <div className="list">
@@ -50,7 +50,7 @@ class SearchResults extends Component {
             <h2>Loading results</h2>
           </div>
         )};
-      </div>
+        </div>
     );
   };
 }
