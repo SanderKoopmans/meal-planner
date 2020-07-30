@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Card from './Card';
-import './List.css';
+import './SearchResults.css';
 
-class List extends Component {
-  constructor(props){
+class SearchResults extends Component {
+  constructor(props) {
     super(props);
     this.state = {
       list: []
@@ -34,26 +34,25 @@ class List extends Component {
           <div className="list">
             {recipe.map(item => {
               return(
-                <Card 
-                  key={item.uri}
-                  label={item.label}
-                  image={item.image}
-                  amount={item.yield}
-                  ingredients={item.ingredientLines}
-                  desc={item.url}
-                   />
+                <Card
+                key={item.uri}
+                label={item.label}
+                image={item.image}
+                amount={item.yield}
+                ingredients={item.ingredientLines}
+                desc={item.url}
+                  />
               );
             })}
           </div>
         ) : (
           <div>
-            <h2>Loading</h2>
+            <h2>Loading results</h2>
           </div>
-        )
-      }
+        )};
       </div>
     );
-  }
+  };
 }
 
-export default List;
+export default SearchResults;

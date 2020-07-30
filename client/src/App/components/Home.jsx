@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SearchForm from './SearchForm';
-import List from './List';
-// import store from 'store2';
+import SearchResults from './SearchResults';
 
 class Home extends Component {
   render() {
@@ -9,10 +8,8 @@ class Home extends Component {
       <div className="Home">
         <h1>Home</h1>
         <SearchForm />
-        <div className="fromList">
-          <p>Stored items</p>
-          <List />
-        </div>
+        <p>Stored items</p>
+        <SearchResults />
       </div>
     );
   }

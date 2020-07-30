@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-
-class SearchFrom extends Component {
+class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,14 +37,9 @@ class SearchFrom extends Component {
         </select>
       </label>
       <input type="submit" value="Submit" />
-      <Link to={'./list'}>
-        <button>
-          Show results
-        </button>
-      </Link>
       </div>
     )
   }
 }
 
-export default SearchFrom;
+export default SearchForm;
