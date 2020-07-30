@@ -4,13 +4,17 @@
   "description": "express server for mealplanner",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon --watch /server/**.js"
   },
   "author": "Sander Koopmans",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

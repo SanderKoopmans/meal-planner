@@ -1,41 +1,64 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       search: '',
-      value: 'dinner'
+      cuisine: 'Vegan',
+      type: 'Dinner'
   };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+}
+
+  onChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value});
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    const { search, cuisine, type } = this.state;
+    console.log('submit', this.state)
+
+    axios.post('/api/search', { search, cuisine, type})
+    .then(result => { console.log('result', result) })
   }
 
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
-
-    handleSubmit(event) {
-    alert('Your chosen type of dish: ' + this.state.value);
-    event.preventDefault();
-    }
 
   render() {
+    const { search, cuisine, type } = this.state;
     return (
       <div className="SearchForm">
-      <h2>Find a recipe!</h2>
-      <label>
-        Search term:
-        <input type="text" value={this.state.search} onChange={this.handleChange} placeholder="Insert search term"/>
-      </label>
-      <label>Type of dish:
-        <select value={this.state.value} onChange={this.handleChange}>
-          <option value="breakfast">Breakfast</option>
-          <option value="lunch">Lunch</option>
-          <option value="dinner">Dinner</option>
-        </select>
-      </label>
-      <input type="submit" value="Submit" />
+        <h2>Find a recipe!</h2>
+        <form onSubmit={this.onSubmit}>
+          <label>
+            Search term:
+            <input
+              type='text'
+              name='search'
+              placeholder='Example, muffin'
+              value={search}
+              onChange={this.onChange}
+              />
+          </label>
+          <label>
+            Select cuisine
+            <select value={this.state.value} onChange={this.onChange}>
+              <option value='vegetarian'>Vegetarian</option>
+              <option value='vegan'>Vegan</option>
+              <option value='red-meat-free'>Red meat free</option>
+            </select>
+          </label>
+          <label>
+            Select course
+            <select>
+              <option value='breakfast'>Breakfast</option>
+              <option value='lunch'>Lunch</option>
+              <option value='dinner'>Dinner</option>
+            </select>
+          </label>
+          <button type='submit'>Search!</button>
+        </form>
       </div>
     )
   }
