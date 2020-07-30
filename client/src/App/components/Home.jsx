@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchForm from './SearchForm';
-const storedItems = localStorage.getItem('myList');
+import store from 'store2';
 
 class Home extends Component {
   render() {
@@ -10,7 +10,6 @@ class Home extends Component {
         <SearchForm />
         <div className="fromList">
           <p>Stored items</p>
-          
         </div>
       </div>
     );
