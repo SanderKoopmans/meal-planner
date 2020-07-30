@@ -1,7 +1,22 @@
 .Card {
   width: 250px;
+  border: 1px solid lightgrey;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.2);
+  background: white;
 }
 
 .Card img {
   width: 200px;
+  border-radius: 5px;
+}
+
+.Card button {
+  margin: 0 5px 0 0;
+  padding: 2px 10px;
+}
+
+.Card p {
+  margin: 0 0 2px 0;
 }

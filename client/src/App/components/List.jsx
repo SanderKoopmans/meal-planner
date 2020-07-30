@@ -26,12 +26,10 @@ class List extends Component {
     console.log('THIS LOG', this.state.list);
     const recipe = list.map(item => item.recipe);
     console.log('ANOTHER LOG', recipe);
-    const title = recipe.map(item => item.label);
-    console.log('Title? ', title);
 
     return (
       <div className="App">
-        <h1>Your list of recipes:</h1>
+        <h2>Your search results:</h2>
         {recipe.length ? (
           <div className="list">
             {recipe.map(item => {
@@ -39,7 +37,11 @@ class List extends Component {
                 <Card 
                   key={item.uri}
                   label={item.label}
-                  image={item.image} />
+                  image={item.image}
+                  amount={item.yield}
+                  ingredients={item.ingredientLines}
+                  desc={item.url}
+                   />
               );
             })}
           </div>
