@@ -25,18 +25,22 @@ class List extends Component {
 
   render() {
     const { list } = this.state;
-    console.log(this.state.list);
+    console.log('THIS LOG', this.state.list);
+    const recipe = list.map(item => item.recipe);
+    console.log('ANOTHER LOG', recipe);
+    const title = recipe.map(item => item.label);
+    console.log('Title? ', title);
 
     return (
       <div className="App">
-        <h1>List of Items</h1>
-        <h2>{list}</h2>
-        {list.length ? (
+        <h1>Your list of recipes:</h1>
+        {recipe.length ? (
           <div>
-            {list.map((item) => {
+            {recipe.map(item => {
               return(
                 <div>
-                  {item}
+                  <p>{item.label}</p>
+                  <p>{item.image}</p>
                 </div>
               );
             })}

@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const appId = process.env.appID;
 const appKey = process.env.appKEY;
 
-const url = `https://api.edamam.com/search?q=&app_id=${appId}&app_key=${appKey}&diet=low-carb`;
+// const url = `https://api.edamam.com/search?q=&app_id=${appId}&app_key=${appKey}&diet=low-carb`;
 
 // const getRecipeList = async () => {
 //   let result;
