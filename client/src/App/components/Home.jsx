@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Home extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="Home">
         <h1>Home</h1>
         <Link to={'./list'}>
           <button variant="raised">

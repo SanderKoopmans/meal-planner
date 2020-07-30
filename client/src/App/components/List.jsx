@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-// const env = require('dotenv').config();
-
-// const appId = process.env.REACT_APP_appID;
-// const appKey = process.env.REACT_APP_appKEY;
+import Card from './Card';
+import './List.css';
 
 class List extends Component {
   constructor(props){
@@ -35,13 +33,13 @@ class List extends Component {
       <div className="App">
         <h1>Your list of recipes:</h1>
         {recipe.length ? (
-          <div>
+          <div className="list">
             {recipe.map(item => {
               return(
-                <div>
-                  <p>{item.label}</p>
-                  <p>{item.image}</p>
-                </div>
+                <Card 
+                  key={item.uri}
+                  label={item.label}
+                  image={item.image} />
               );
             })}
           </div>

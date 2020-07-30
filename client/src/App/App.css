@@ -1,7 +1,12 @@
-.App {
-  text-align: center;
-}
-
 body {
   background: rgb(235, 235, 235);
 }
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 2%;
+}
+
