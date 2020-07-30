@@ -4,13 +4,18 @@ import PropTypes from 'prop-types';
 
 let myList = [];
 
+const updateStorage = () => {
+  localStorage.setItem('myList', myList.toString());
+};
+
 const addToList = (event) => {
   console.log('target? ', event.target.parentElement);
   console.log('inner? ', event.target.parentElement.innerHTML);
   const target = event.target.parentElement;
-  myList.push(target.innerHTML);
+  myList.push(target.outerHTML);
   console.log('list ', myList);
-}
+  updateStorage();
+};
 
 const Card = props => {
   const { label, image, amount, ingredients, desc } = props;

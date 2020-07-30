@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import SearchForm from './SearchForm';
+const storedItems = localStorage.getItem('myList');
 
 class Home extends Component {
   render() {
     return (
       <div className="Home">
         <h1>Home</h1>
-        <Link to={'./list'}>
-          <button variant="raised">
-            My List
-          </button>
-        </Link>
+        <SearchForm />
+        <div className="fromList">
+          <p>Stored items</p>
+          
+        </div>
       </div>
     );
   }
