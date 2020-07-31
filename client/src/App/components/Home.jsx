@@ -46,10 +46,9 @@ class Home extends Component {
       <div className="Home">
         <h1>Home</h1>
         <SearchForm sendToParent={this.getFromSearchForm.bind(this)}/>
-        <p>Stored items</p>
-        <button onClick={getStoredItems}>Save to selection</button>
+        <button onClick={getStoredItems}>Update selection</button>
 
-        <button onClick={() => this.hideComponent("showSearchResult")}>Hide/Show results</button>
+        <button onClick={() => this.hideComponent("showSearchResult")}>Toggle results</button>
 
           {showSearchResult && <SearchResults foundRecipes={this.state.recipes}/>}
           <h3>Your selection:</h3>

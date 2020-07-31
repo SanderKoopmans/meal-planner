@@ -5,6 +5,13 @@ let recipeArr;
 let recipe;
 
 class SearchResults extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     list: [],
+  //   }
+  // }
+  
 
   componentDidUpdate() {
     recipeArr = this.props.foundRecipes;
@@ -15,7 +22,6 @@ class SearchResults extends Component {
   render() {
     return (
       <div className="searchContainer">
-        <h2>Your search results:</h2>
         {recipe ? (
           <div className="list">
             {recipe.map(item => {
