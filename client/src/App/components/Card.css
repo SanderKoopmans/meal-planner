@@ -2,21 +2,48 @@
   width: 250px;
   border: 1px solid lightgrey;
   margin: 10px;
-  padding: 10px;
-  box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.2);
+  padding: 5px 10px;
+  box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.1);
   background: white;
+  border-radius: 5px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .Card img {
-  width: 200px;
+  width: 180px;
   border-radius: 5px;
+  display: flex;
+  margin: 0 auto 10px;
+}
+
+.Card .controls {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  margin: auto 0;
 }
 
 .Card button {
-  margin: 0 5px 0 0;
-  padding: 2px 10px;
+  display: flex;
+  justify-self: end;
+  background: grey;
+  border: 1px solid grey;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.Card button:hover {
+  background: orange;
+  border: 1px solid orange;
+  transition: .3s;
 }
 
 .Card p {
-  margin: 0 0 2px 0;
+  margin: 10px auto;
+  display: flex;
 }

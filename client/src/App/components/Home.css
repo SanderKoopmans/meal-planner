@@ -18,3 +18,25 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.search-controls {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+.search-controls button {
+  background: orange;
+  border: 1px solid orange;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-controls button:hover {
+  background: grey;
+  border: 1px solid grey;
+  transition: .3s;
+}

@@ -21,10 +21,12 @@ const Card = props => {
   const { label, image, desc } = props;
   return (
     <div className="Card">
-      <h3>{label}</h3>
+      <p>{label}</p>
       <img src={image} alt={label}></img>
-      <button href={desc}>Get full recipe</button>
-      <button onClick={(data) => saveToArray({'label': label, 'image': image, 'url': desc })}>Add to selection</button>
+      <div className="controls">
+        <button href={desc}>Get full recipe</button>
+        <button onClick={(data) => saveToArray({'label': label, 'image': image, 'url': desc })}>Add to selection</button>
+      </div>
     </div>
   );
 };

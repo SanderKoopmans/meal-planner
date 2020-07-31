@@ -19,7 +19,7 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      showSearchResult: false,
+      showSearchResult: true,
       recipes: '',
     };
     this.hideComponent = this.hideComponent.bind(this)
@@ -50,9 +50,12 @@ class Home extends Component {
           <p>When you found something to your liking. Save the recipe to your list, and update your selection.</p>
         </div>
         <SearchForm sendToParent={this.getFromSearchForm.bind(this)}/>
-        <button onClick={getStoredItems}>Update selection</button>
 
-        <button onClick={() => this.hideComponent("showSearchResult")}>Toggle results</button>
+        <div className="search-controls">
+          <button onClick={getStoredItems}>Update selection</button>
+
+          <button onClick={() => this.hideComponent("showSearchResult")}>Toggle results</button>
+        </div>
 
           {showSearchResult && <SearchResults foundRecipes={this.state.recipes}/>}
           <h3>Your selection:</h3>
