@@ -69,13 +69,16 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      showSearchResult: true
+      showSearchResult: true,
+      recipes: '',
     };
     this.hideComponent = this.hideComponent.bind(this)
   }
 
-  parentFunction = (data_from_child) => {
-    console.log('in parent', data_from_child);
+  getFromSearchForm = async (searchResults) => {
+    const results = searchResults.data.hits;
+    console.log('this state', results);
+    this.setState({recipes: results})
   }
 
   hideComponent(name) {
@@ -93,7 +96,7 @@ class Home extends Component {
     return (
       <div className="Home">
         <h1>Home</h1>
-        <SearchForm functionCallFromParent={this.parentFunction.bind(this)}/>
+        <SearchForm sendToParent={this.getFromSearchForm.bind(this)}/>
         <p>Stored items</p>
         <button onClick={getStoredItems}>Save to selection</button>
 

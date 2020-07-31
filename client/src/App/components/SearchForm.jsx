@@ -22,7 +22,7 @@ class SearchForm extends Component {
 
     axios.post('/api/search', { search, cuisine, type})
     // .then(result => { console.log('result in post', result) })
-    .then(result => this.props.functionCallFromParent(result));
+    .then(result => this.props.sendToParent(result));
   }
 
   render() {
