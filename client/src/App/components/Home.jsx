@@ -25,7 +25,7 @@ class Home extends Component {
     this.hideComponent = this.hideComponent.bind(this)
   }
 
-  getFromSearchForm = async (searchResults) => {
+  getFromSearchForm = (searchResults) => {
     const results = searchResults.data.hits;
     console.log('this state', results);
     this.setState({recipes: results})

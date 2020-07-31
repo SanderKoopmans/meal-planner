@@ -1,31 +1,18 @@
 import React, { Component } from 'react';
 import Card from './Card';
 
+let recipeArr;
+let recipe;
+
 class SearchResults extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      list: [],
-    }
-  }
 
-  componentDidMount() {
-    this.getList();
-  }
-
-  getList = () => {
-    fetch('api/getList')
-    .then(res => res.json())
-    .then(list => this.setState({list: list.hits}))
-    .catch(err => console.log(err));
+  componentDidUpdate() {
+    recipeArr = this.props.foundRecipes;
+    recipe = recipeArr.map(recipe => recipe.recipe);
+    console.log('ANOTHER LOG', recipe);
   }
 
   render() {
-    const { list } = this.state;
-    // console.log('THIS LOG', this.state.list);
-    const recipe = list.map(item => item.recipe);
-    // console.log('ANOTHER LOG', recipe);
-
     return (
       <div className="searchContainer">
         <h2>Your search results:</h2>

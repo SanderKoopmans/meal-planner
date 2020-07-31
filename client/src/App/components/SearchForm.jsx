@@ -26,7 +26,7 @@ class SearchForm extends Component {
   }
 
   render() {
-    const { search, cuisine, type } = this.state;
+    const { search } = this.state;
     return (
       <div className="SearchForm">
         <h2>Find a recipe!</h2>
