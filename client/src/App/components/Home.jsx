@@ -19,7 +19,7 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      showSearchResult: true,
+      showSearchResult: false,
       recipes: '',
     };
     this.hideComponent = this.hideComponent.bind(this)
@@ -42,7 +42,6 @@ class Home extends Component {
 
   render() {
     const { showSearchResult } = this.state;
-    console.log('selection ', recipes);
     return (
       <div className="Home">
         <h1>Home</h1>

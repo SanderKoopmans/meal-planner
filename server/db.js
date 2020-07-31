@@ -6,22 +6,9 @@ const appKey = process.env.appKEY;
 
 // const url = `https://api.edamam.com/search?q=&app_id=${appId}&app_key=${appKey}&diet=low-carb`;
 
-// const getRecipeList = async () => {
-//   let result;
-//   try {
-//     result = fetch(url)
-//     .then(res => res.json())
-//   } catch (err) {
-//     console.log(err)
-//   }
-//   return result;
-// }
-
 const searchUrl = (params) => {
   console.log('searchitems', params);
   const text = params.search;
-  // const cuisine = params.cuisine;
-  // const type = params.type;
   const urlSearch = `https://api.edamam.com/search?q=${text}&app_id=${appId}&app_key=${appKey}`;
   console.log('req url', urlSearch);
   let result;
