@@ -21,9 +21,9 @@ class SearchForm extends Component {
     console.log('submit', this.state)
 
     axios.post('/api/search', { search, cuisine, type})
-    .then(result => { console.log('result', result) })
+    // .then(result => { console.log('result in post', result) })
+    .then(result => this.props.functionCallFromParent(result));
   }
-
 
   render() {
     const { search, cuisine, type } = this.state;

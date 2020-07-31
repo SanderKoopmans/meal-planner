@@ -14,7 +14,6 @@ const getStoredItems = () => {
   console.log('selection ', recipeSelection);
 };
 
-
 class SearchResults extends Component {
   constructor(props) {
     super(props);
@@ -75,6 +74,10 @@ class Home extends Component {
     this.hideComponent = this.hideComponent.bind(this)
   }
 
+  parentFunction = (data_from_child) => {
+    console.log('in parent', data_from_child);
+  }
+
   hideComponent(name) {
     console.log('name ',name);
     switch (name) {
@@ -90,7 +93,7 @@ class Home extends Component {
     return (
       <div className="Home">
         <h1>Home</h1>
-        <SearchForm />
+        <SearchForm functionCallFromParent={this.parentFunction.bind(this)}/>
         <p>Stored items</p>
         <button onClick={getStoredItems}>Save to selection</button>
 
