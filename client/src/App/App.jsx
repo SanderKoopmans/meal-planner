@@ -5,7 +5,7 @@ import './App.css';
 class App extends Component {
   render() {
     const App = () => (
-      <div className="home">
+      <div className="App">
         <Home />
       </div>
       )

@@ -19,7 +19,6 @@ const saveToArray = (data) => {
 
 const Card = props => {
   const { label, image, desc } = props;
-  // console.log('props ', props);
   return (
     <div className="Card">
       <h3>{label}</h3>

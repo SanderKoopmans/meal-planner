@@ -3,6 +3,11 @@
   flex-wrap: wrap;
 }
 
+.intro {
+  width: 60%;
+  margin: 0 auto;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;

@@ -44,7 +44,11 @@ class Home extends Component {
     const { showSearchResult } = this.state;
     return (
       <div className="Home">
-        <h1>Home</h1>
+        <h1>Meal-finder</h1>
+        <div className="intro">
+          <h3>Please find a recipe you like, using the search tools below.</h3>
+          <p>When you found something to your liking. Save the recipe to your list, and update your selection.</p>
+        </div>
         <SearchForm sendToParent={this.getFromSearchForm.bind(this)}/>
         <button onClick={getStoredItems}>Update selection</button>
 

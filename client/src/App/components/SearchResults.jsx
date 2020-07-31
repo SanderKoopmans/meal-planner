@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import './SearchResults.css';
 
 let recipeArr;
 let recipe;
 
 class SearchResults extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     list: [],
-  //   }
-  // }
-  
 
   componentDidUpdate() {
     recipeArr = this.props.foundRecipes;

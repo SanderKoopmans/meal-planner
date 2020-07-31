@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './SearchForm.css';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -28,35 +29,40 @@ class SearchForm extends Component {
     const { search } = this.state;
     return (
       <div className="SearchForm">
-        <h2>Find a recipe!</h2>
+        <h3>Let's find some recipes</h3>
         <form onSubmit={this.onSubmit}>
+          <div className="home-search">
           <label>
-            Search term:
+            <i className="fa fa-search searchIcon"></i>
             <input
+              id="search"
               type='text'
               name='search'
               placeholder='Example, muffin'
               value={search}
               onChange={this.onChange}
               />
+              <button id="search-submit" type='submit'>Search</button>
           </label>
-          <label>
-            Select cuisine
-            <select value={this.state.value} onChange={this.onChange}>
-              <option value='vegetarian'>Vegetarian</option>
-              <option value='vegan'>Vegan</option>
-              <option value='red-meat-free'>Red meat free</option>
-            </select>
-          </label>
-          <label>
-            Select course
-            <select>
-              <option value='breakfast'>Breakfast</option>
-              <option value='lunch'>Lunch</option>
-              <option value='dinner'>Dinner</option>
-            </select>
-          </label>
-          <button type='submit'>Search!</button>
+          </div>
+          <div className="option-search">
+            <label>
+              Select cuisine
+              <select value={this.state.value} onChange={this.onChange}>
+                <option value='vegetarian'>Vegetarian</option>
+                <option value='vegan'>Vegan</option>
+                <option value='red-meat-free'>Red meat free</option>
+              </select>
+            </label>
+            <label>
+              Select course
+              <select>
+                <option value='breakfast'>Breakfast</option>
+                <option value='lunch'>Lunch</option>
+                <option value='dinner'>Dinner</option>
+              </select>
+            </label>
+          </div>
         </form>
       </div>
     )
