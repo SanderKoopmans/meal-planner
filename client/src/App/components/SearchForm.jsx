@@ -19,7 +19,7 @@ class SearchForm extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     const { search, cuisine, type } = this.state;
-    console.log('submit', this.state)
+    console.log('Search values ', this.state)
 
     axios.post('/api/search', { search, cuisine, type})
     .then(result => this.props.sendToParent(result));

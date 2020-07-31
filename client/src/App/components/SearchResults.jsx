@@ -10,7 +10,6 @@ class SearchResults extends Component {
   componentDidUpdate() {
     recipeArr = this.props.foundRecipes;
     recipe = recipeArr.map(recipe => recipe.recipe);
-    console.log('ANOTHER LOG', recipe);
   }
 
   render() {
