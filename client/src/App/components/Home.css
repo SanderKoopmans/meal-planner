@@ -1,6 +1,7 @@
 .searchContainer {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .intro {
@@ -12,6 +13,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  justify-content: center;
 }
 
 .selection {
@@ -39,4 +41,10 @@
   background: grey;
   border: 1px solid grey;
   transition: .3s;
+}
+
+.selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
