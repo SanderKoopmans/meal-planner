@@ -26,7 +26,8 @@ class Home extends Component {
   }
 
   getFromSearchForm = (searchResults) => {
-    const results = searchResults.data.hits;
+    console.log('in getfromsearch', searchResults);
+    const results = searchResults.hits;
     console.log('this state', results);
     this.setState({recipes: results})
   }
