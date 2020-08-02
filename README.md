@@ -28,7 +28,7 @@ This weekly mealplanner is part of the **&lt;/Salt>** course
 2. Implement small improvements
 
 ## Possible improvements:
-1. Improve fetch request
+1. Improve fetch request done 2/8
 2. Add cards to days
 3. Make cards draggable
 4. Store data in DB
