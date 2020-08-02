@@ -38,8 +38,8 @@
 }
 
 .Card button:hover {
-  background: orange;
-  border: 1px solid orange;
+  background: rgb(42, 53, 206);
+  border: 1px solid rgb(42, 53, 206);
   transition: .3s;
 }
 

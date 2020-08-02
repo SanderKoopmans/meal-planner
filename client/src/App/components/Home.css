@@ -29,8 +29,8 @@
 }
 
 .search-controls button {
-  background: orange;
-  border: 1px solid orange;
+  background: rgb(42, 53, 206);
+  border: 1px solid rgb(42, 53, 206);
   color: #fff;
   padding: 5px 15px;
   border-radius: 5px;
