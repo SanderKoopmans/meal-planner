@@ -6,20 +6,22 @@ let recipeArr;
 let recipe;
 
 class SearchResults extends Component {
+  constructor() {
+    super();
+    this.state = {
+      recipe: '',
+    };
+  }
 
   componentDidMount() {
     console.log('(SearchResults) mounted...');
     recipeArr = this.props.foundRecipes;
-    recipe = recipeArr.map(recipe => recipe.recipe);
-  }
-
-  componentDidUpdate() {
-    console.log('(SearchResults) update fired...');
-    recipeArr = this.props.foundRecipes;
-    recipe = recipeArr.map(recipe => recipe.recipe);
+    this.setState({ recipe: recipeArr.map(recipe => recipe.recipe)})
+    console.log('(SearchResults) recipeArr', recipeArr, 'recipe: ', recipe)
   }
 
   render() {
+    const { recipe } = this.state;
     return (
       <div className="searchContainer">
         {recipe ? (

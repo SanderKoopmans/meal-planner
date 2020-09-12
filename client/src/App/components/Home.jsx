@@ -20,10 +20,8 @@ class Home extends Component {
     super();
     this.state = {
       loading: true,
-      showSearchResult: true,
       recipes: '',
     };
-    this.hideComponent = this.hideComponent.bind(this)
   }
 
   getLoadingStatus = (loading) => {
@@ -38,17 +36,8 @@ class Home extends Component {
     this.setState({recipes: results})
   }
 
-  hideComponent(name) {
-    console.log('name ',name);
-    switch (name) {
-      case "showSearchResult":
-        this.setState({ showSearchResult: !this.state.showSearchResult });
-        break;
-    }
-  }
-
   render() {
-    const { showSearchResult, loading } = this.state;
+    const { loading } = this.state;
     return (
       <div className="Home">
         <h1>Meal-finder</h1>
@@ -63,10 +52,9 @@ class Home extends Component {
         <div className="search-controls">
           <button onClick={getStoredItems}>Update selection</button>
 
-          <button onClick={() => this.hideComponent("showSearchResult")}>Toggle results</button>
         </div>
 
-          {!loading ? showSearchResult && <SearchResults foundRecipes={this.state.recipes}/> : <h3>Loading recipes...</h3>}
+          {!loading ? <SearchResults foundRecipes={this.state.recipes}/> : <h3>Loading recipes...</h3>}
 
           <h3>Your selection:</h3>
           {recipes.length ? 
