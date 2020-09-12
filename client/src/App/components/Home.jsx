@@ -19,10 +19,16 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
+      loading: true,
       showSearchResult: true,
       recipes: '',
     };
     this.hideComponent = this.hideComponent.bind(this)
+  }
+
+  getLoadingStatus = (loading) => {
+    console.log('loading...')
+    this.setState(loading);
   }
 
   getFromSearchForm = (searchResults) => {
@@ -42,7 +48,7 @@ class Home extends Component {
   }
 
   render() {
-    const { showSearchResult } = this.state;
+    const { showSearchResult, loading } = this.state;
     return (
       <div className="Home">
         <h1>Meal-finder</h1>
@@ -50,7 +56,9 @@ class Home extends Component {
           <h3>Please find a recipe you like, using the search tools below.</h3>
           <p>When you found something to your liking. Save the recipe to your list, and update your selection.</p>
         </div>
-        <SearchForm sendToParent={this.getFromSearchForm.bind(this)}/>
+        <SearchForm 
+          setLoading ={this.getLoadingStatus.bind(this)} 
+          sendToParent={this.getFromSearchForm.bind(this)} />
 
         <div className="search-controls">
           <button onClick={getStoredItems}>Update selection</button>
@@ -58,27 +66,23 @@ class Home extends Component {
           <button onClick={() => this.hideComponent("showSearchResult")}>Toggle results</button>
         </div>
 
-          {showSearchResult && <SearchResults foundRecipes={this.state.recipes}/>}
+          {!loading ? showSearchResult && <SearchResults foundRecipes={this.state.recipes}/> : <h3>Loading recipes...</h3>}
+
           <h3>Your selection:</h3>
-          {recipes.length ? (
+          {recipes.length ? 
             <div className="selection">
             {recipes.map((item, index) => {
               return(
                 <Card 
-                key={index}
-                label={item.label}
-                image={item.image}
-                desc={item.uri}
-                />
+                  key={index}
+                  label={item.label}
+                  image={item.image}
+                  desc={item.uri} />
               );
             })}
             </div>
-            ) : (
-              <div>
-                <h3>Please add something to the list</h3>
-              </div>
-            )}
-          </div>
+          : <h3>Please add something to your list</h3>}
+        </div>
     );
   };
 };

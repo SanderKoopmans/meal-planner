@@ -5,7 +5,6 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
       search: '',
       cuisine: 'Vegan',
       type: 'Dinner'
@@ -22,7 +21,7 @@ class SearchForm extends Component {
     console.log('Search value: ', search);
 
     (async () => {
-      this.setState({ loading: true })
+      this.props.setLoading({ loading: true })
       const res = await fetch('/api/search', {
         method: 'POST',
         headers: {
@@ -33,15 +32,13 @@ class SearchForm extends Component {
       })
         .then(res => res.json())
         .then(data => this.props.sendToParent(data))
-        .then(loading => this.setState({ loading: false }))
+        .then(() => this.props.setLoading({ loading: false }))
     })();
   }
 
   render() {
-    const { search, loading } = this.state;
+    const { search } = this.state;
     return (
-      <>
-      {!loading ? 
       <div className="SearchForm">
         <h3>Let's find some recipes</h3>
         <form onSubmit={this.onSubmit}>
@@ -79,9 +76,6 @@ class SearchForm extends Component {
           </div>
         </form>
       </div>
-     : <h2>Loading ... </h2>
-      }
-      </>
     )
   }
 }

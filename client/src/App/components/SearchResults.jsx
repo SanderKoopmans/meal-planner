@@ -7,7 +7,14 @@ let recipe;
 
 class SearchResults extends Component {
 
+  componentDidMount() {
+    console.log('(SearchResults) mounted...');
+    recipeArr = this.props.foundRecipes;
+    recipe = recipeArr.map(recipe => recipe.recipe);
+  }
+
   componentDidUpdate() {
+    console.log('(SearchResults) update fired...');
     recipeArr = this.props.foundRecipes;
     recipe = recipeArr.map(recipe => recipe.recipe);
   }
@@ -23,8 +30,7 @@ class SearchResults extends Component {
                 key={item.uri}
                 label={item.label}
                 image={item.image}
-                desc={item.url}
-                  />
+                desc={item.url} />
               );
             })}
           </div>

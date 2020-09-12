@@ -4,14 +4,11 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const App = () => (
-      <div className="App">
-        <Home />
-      </div>
+      return(
+        <div className="App">
+          <Home />
+        </div>
       )
-      return (
-        <App/>
-      );
     }
 }
 
