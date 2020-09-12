@@ -3,7 +3,6 @@ import Card from './Card';
 import './SearchResults.css';
 
 let recipeArr;
-let recipe;
 
 class SearchResults extends Component {
   constructor() {
@@ -17,7 +16,7 @@ class SearchResults extends Component {
     console.log('(SearchResults) mounted...');
     recipeArr = this.props.foundRecipes;
     this.setState({ recipe: recipeArr.map(recipe => recipe.recipe)})
-    console.log('(SearchResults) recipeArr', recipeArr, 'recipe: ', recipe)
+    console.log('(SearchResults) recipeArr', recipeArr)
   }
 
   render() {
